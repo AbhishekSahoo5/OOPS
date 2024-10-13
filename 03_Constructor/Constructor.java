@@ -1,17 +1,21 @@
 
 public class Constructor {
     public static void main(String[] args) {
-        Complex num1=new Complex(2,4);
-        Complex num2=new Complex(4,1);
-        Complex num3=new Complex(21);
-        num1.print();
+        // Complex num1=new Complex();      
+        // num1.print();
+
+        Complex num2=new Complex(4,5);
         num2.print();
+        Complex num3=new Complex(6,7);
         num3.print();
 
-        System.out.println("Adding two Complex Num");
-        Complex result=num1.add(num2);
+        Complex num4=new Complex(10);
+        num4.print();
+    
+        Complex result=num2.add(num3);
         result.print();
 
+        
         
     }
     
@@ -21,34 +25,24 @@ class Complex{
     int a,b;
     String name;
 
-    // default constructor
-    // public Complex(){
-    //     a=0;
-    //     b=0;
-    // }
-
-    // same value will assigned to all the objects
+    // default constructor ---> having no parameters
     // public Complex(){
     //     a=5;
     //     b=9;
     // }
 
-    // parametrized constructor
-    // Complex(int real,int imag){
-    //     a=real;
-    //     b=imag;
-    // }
-    Complex(int a,int b){
-        this.a=a;
-        this.b=b;
-    }
-    
-    // Constructor overloading
-    Complex(int real){
+    public Complex(int real, int img)
+    {
         a=real;
-        b=100;
+        b=img;
     }
 
+    // Constructor overloading
+    public Complex(int real)
+    {
+        a=real;
+        b=1;
+    }
 
 
     void print(){
@@ -56,11 +50,14 @@ class Complex{
     }
 
     Complex add(Complex num2){
-        // this.print();      //--> print the current object i.e. num2
-        System.out.println(this);
-        Complex newNum=new Complex(a+num2.a,b+num2.b);
-        return newNum;
+        return new Complex(a+num2.a,b+num2.b);
     }
 
+    // use of this keyword
+    Complex(int a,int b){
+        this.a=a;
+        this.b=b;
+        print();
+    }
 
 }

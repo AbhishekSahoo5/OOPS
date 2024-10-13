@@ -1,11 +1,12 @@
 public class MainClass{
     public static void main(String[] args) {
-        // object
+        // object 1
         Dog d1=new Dog();
         d1.name="Tommy";
         d1.bark();
         d1.walk();
 
+        // object 2
         Dog d2=new Dog();
         d2.name="shampoo";
         d2.bark();
